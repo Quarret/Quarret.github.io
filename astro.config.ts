@@ -29,8 +29,8 @@ export default defineConfig({
     }),
   ],
   i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
+    locales: ["zh-CN"],
+    defaultLocale: "zh-CN",
     routing: {
       prefixDefaultLocale: false,
     },
@@ -39,7 +39,7 @@ export default defineConfig({
     processor: unified({
       remarkPlugins: [
         remarkToc,
-        [remarkCollapse, { test: "Table of contents" }],
+        [remarkCollapse, { test: /Table of contents|目录/ }],
       ],
       rehypePlugins: [rehypeCallouts],
     }),
